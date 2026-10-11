@@ -11,10 +11,9 @@ const CONFIG = {
   date: "2026-11-12T19:00:00+02:00",   // الزفاف — الخميس 12 نوفمبر      (← عدّل الساعة)
 
   // اسم القاعة والمدينة والعنوان — سيبهم فاضيين وهما مش هيظهروا
-  venue:   { en: "", ar: "" },
-  city:    { en: "", ar: "" },
+  venue:   { en: "Casablanca Palace", ar: "قصر كازابلانكا" },
+  city:    { en: "Shibin El Qanater, Qalyubia", ar: "شبين القناطر، القليوبية" },
   address: { en: "", ar: "" },
-
   // الخريطة اللي بتظهر جوه الدعوة (لوكيشن القاعة)
   mapEmbed: "https://maps.google.com/maps?cid=11067860501152914846&z=16&output=embed",
   // لو الخريطة ما ظهرتش أو ظهرت مكان غلط: افتح جوجل ماب على الكمبيوتر ← Share ← Embed a map ←
@@ -37,10 +36,10 @@ const I18N = {
     exclusive: "This invitation is exclusive for you",
     tap: "Tap the seal to open",
     letterSub: "Wedding Invitation",
-    eyebrow: "Together with their families",
-    invite: "request the pleasure of your company at their wedding celebration",
-    eventsTitle: "Save the Dates",
-    eventsSub: "Two special days",
+   eyebrow: "With joyful hearts and under the grace of Allah",
+    invite: "Cordially invite you to share the joy of our wedding celebration",
+    eventsTitle: "Save the Date",
+    eventsSub: "One special days",
     katb: "Katb El Kitab",
     wedding: "Wedding Celebration",
     countTitle: "Counting down to our day",
@@ -67,10 +66,10 @@ blessText: "Your presence will complete our joy, and your prayers mean the world
     exclusive: "هذه الدعوة خاصة بك",
     tap: "اضغط على الختم لفتح الدعوة",
     letterSub: "دعوة زفاف",
-    eyebrow: "بصحبة أسرتيهما",
-    invite: "يتشرفان بدعوتكم لحضور حفل زفافهما",
+    eyebrow: "بقلوب مفعمة بالفرح وبفضل من الله",
+    invite: "يتشرفان بدعوتكم لمشاركتهما فرحة زفافهما",
     eventsTitle: "احفظوا الموعد",
-    eventsSub: "يومان لا يُنسيان",
+    eventsSub: "يوم لا يُنسى",
     katb: "كتب الكتاب",
     wedding: "حفل الزفاف",
     countTitle: "العد التنازلي ليوم الفرح",
@@ -143,7 +142,7 @@ function render() {
 
   // كتب الكتاب + الزفاف
   const fmtE = (iso, o) => new Date(iso).toLocaleDateString(loc, { ...o, timeZone: tz });
-  $("#events").innerHTML = [[CONFIG.katb, t.katb], [CONFIG.date, t.wedding]].map(([iso, name]) =>
+  $("#events").innerHTML = [[CONFIG.date, t.wedding]].map(([iso, name]) =>
     `<div class="ev"><div class="ev-wd">${fmtE(iso, { weekday: "long" })}</div>
      <div class="ev-day">${fmtE(iso, { day: "numeric" })}</div>
      <div class="ev-mo">${fmtE(iso, { month: "long", year: "numeric" })}</div>
@@ -234,3 +233,4 @@ document.querySelectorAll(".rv").forEach((el) => io.observe(el));
 if (CONFIG.mapEmbed) $("#mapFrame").src = CONFIG.mapEmbed;
 else $("#mapBox").style.display = "none";
 render();
+
