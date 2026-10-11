@@ -286,3 +286,19 @@ footer{ padding:36px 20px calc(30px + env(safe-area-inset-bottom,0px)); }
   background: radial-gradient(ellipse at center, rgba(15,8,11,.5), transparent 70%);
 }
 .names{ font-size: clamp(2.8rem, 12vw, 5rem); margin: 10px 0; }
+.bsm{ font-family:var(--script); font-size:1.5rem; color:var(--gold); margin-bottom:10px; }
+.bsm:empty{ display:none; }
+html[lang="ar"] .eyebrow{ font-size:1.05rem; line-height:2; text-transform:none; max-width:460px; margin-inline:auto; color:var(--cream); }
+html[lang="ar"] .eyebrow{
+  font-size: min(2.5vw, 1.05rem);
+  white-space: nowrap;
+  max-width: none;
+}
+html[lang="ar"] .eyebrow{
+  font-weight: 700;
+  color: #fff3df;
+  text-shadow: 0 1px 3px rgba(0,0,0,.95), 0 0 14px rgba(0,0,0,.9);
+  background: linear-gradient(90deg, transparent, rgba(15,8,11,.6) 10%, rgba(15,8,11,.6) 90%, transparent);
+  padding: 8px 0;
+}
+.invite{ text-wrap: balance; }
